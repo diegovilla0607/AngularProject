@@ -1,0 +1,139 @@
+
+      <section class="ae-container-fluid ae-container-fluid--inner rk-portfolio animated bounceIn">
+    
+      <!--***** Inicio del Spinner ****-->
+          <div class="lds-css ng-scope" align="center" *ngIf="ps.cargando">
+            <div style="width:100%; height:1000px;" class="lds-flickr">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          <style type="text/css">
+          @keyframes lds-flickr-opacity {
+            0% {
+              -webkit-transform: translate(0 0);
+              transform: translate(0 0);
+              opacity: 1;
+            }
+            49.99% {
+              opacity: 1;
+              -webkit-transform: translate(80px, 0);
+              transform: translate(80px, 0);
+            }
+            50% {
+              opacity: 0;
+              -webkit-transform: translate(80px, 0);
+              transform: translate(80px, 0);
+            }
+            100% {
+              opacity: 0;
+              -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+            }
+          }
+          @-webkit-keyframes lds-flickr-opacity {
+            0% {
+              -webkit-transform: translate(0 0);
+              transform: translate(0 0);
+              opacity: 1;
+            }
+            49.99% {
+              opacity: 1;
+              -webkit-transform: translate(80px, 0);
+              transform: translate(80px, 0);
+            }
+            50% {
+              opacity: 0;
+              -webkit-transform: translate(80px, 0);
+              transform: translate(80px, 0);
+            }
+            100% {
+              opacity: 0;
+              -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+            }
+          }
+          @keyframes lds-flickr {
+            0% {
+              -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+            }
+            50% {
+              -webkit-transform: translate(80px, 0);
+              transform: translate(80px, 0);
+            }
+            100% {
+              -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+            }
+          }
+          @-webkit-keyframes lds-flickr {
+            0% {
+              -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+            }
+            50% {
+              -webkit-transform: translate(80px, 0);
+              transform: translate(80px, 0);
+            }
+            100% {
+              -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+            }
+          }
+          .lds-flickr {
+            position: relative;
+            transition: 0.5s ease;
+          }
+          .lds-flickr div {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0 auto;
+            top: 50%;
+            left: 45px;
+          }
+          .lds-flickr div:nth-child(1) {
+            background: #111;
+            -webkit-animation: lds-flickr 1.2s linear infinite;
+            animation: lds-flickr 1.2s linear infinite;
+            -webkit-animation-delay: -0.5s;
+            animation-delay: -0.5s;
+          }
+          .lds-flickr div:nth-child(2) {
+            background: #888;
+            -webkit-animation: lds-flickr 1.2s linear infinite;
+            animation: lds-flickr 1.2s linear infinite;
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+          }
+          .lds-flickr div:nth-child(3) {
+            background: #111;
+            -webkit-animation: lds-flickr-opacity 1.2s linear infinite;
+            animation: lds-flickr-opacity 1.2s linear infinite;
+            -webkit-animation-delay: -0.5s;
+            animation-delay: -0.5s;
+          }
+          .lds-flickr {
+            width: 200px !important;
+            height: 400px !important;
+          }
+          </style></div>
+      <!--***** Fin de Spinner *****-->
+
+
+
+
+        <div *ngIf="ps.productos_filtrado.length > 0 && !ps.cargando" class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4 animated bounceIn">
+
+          <a *ngFor="let item of ps.productos_filtrado" [routerLink]="['/item', item.cod]" class="rk-item ae-masonry__item">
+            <img src="assets/productos/{{ item.url }}.jpg" alt="">
+            <div class="item-meta">
+              <h2>{{item.titulo}}</h2>
+              <p>{{item.categoria}}</p>
+            </div>
+          </a>
+
+        </div>
+      </section>

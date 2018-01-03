@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/*Animaciones*/
+.animated{
+  animation-duration: .8s;
+  animation-fill-mode: both;
+}
+@keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(.5, .5, .5);
+  }
+
+  20% {
+    transform: scale3d(1.01, 1.01, 1.01);
+  }
+
+  40% {
+    transform: scale3d(.98, .98, .98);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.005, 1.005, 1.005);
+  }
+
+  80% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.bounceIn {
+  animation-name: bounceIn;
+}
